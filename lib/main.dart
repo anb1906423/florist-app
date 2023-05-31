@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.pink.shade100,
         scaffoldBackgroundColor: Colors.pink.shade50,
       ),
-      home:   Orders(),
+      home: CartScreen(),
+      //home:   Orders(),
       // home:  const ProductsOverviewScreen(),
       // routes: {
       //   HomeScreen.routeName: (ctx) => HomeScreen(),

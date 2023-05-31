@@ -1,14 +1,13 @@
-import 'package:florist_app/screens/home.dart';
+
 import 'package:flutter/material.dart';
 
-import '../widgets/login/body_welcome.dart';
+
 import '../widgets/profile/avatar.dart';
 import 'update_profile.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Trang cá nhân'),
