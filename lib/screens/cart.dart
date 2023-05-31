@@ -1,86 +1,87 @@
-import 'package:flutter/material.dart';
-
-import '../constants/colors.dart';
-import '../models/cart.dart';
-import '../widgets/cart/cart_item.dart';
-import '../widgets/drawer.dart';
-
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
-  double _allprice() {
-    double alprice = 0;
-    for (var Hoa in product) {
-      alprice = alprice + ((Hoa.quantity * Hoa.price));
-    }
-    return alprice;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('FlowerShop'),
-        backgroundColor: Colors.pink.shade100,
-      ),
-       drawer: const AppDrawer(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: product.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  Cart Hoa = product[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 15.0),
-                    child: CartItem(
-                      flower: Hoa,
-                    ),
-                  );
-                },
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 200),
-                child: Text(
-                  "Tổng tiền: ${_allprice()}\$",
-                  style: const TextStyle(
-                      color: Colors.pinkAccent,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w100),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-        height: 60,
-        margin: const EdgeInsets.all(10),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: btncolor, // background
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-          ),
-          onPressed: () {},
-          child: const Center(
-            child: Text(
-              'THANH TOÁN',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+import 'package:flutter/material.dart'; 
+import '../widgets/cart/cart_item.dart'; 
+import '../widgets/cart/cart_manager.dart'; 
+ 
+ 
+class CartScreen extends StatelessWidget { 
+  static const routeName = '/cart'; 
+ 
+  const CartScreen({super.key}); 
+ 
+  @override 
+  Widget build(BuildContext context) { 
+    final cart = CartManager(); 
+    return Scaffold( 
+      appBar: AppBar( 
+        title: const Text('Đơn Hàng'), 
+        backgroundColor: Colors.pink.shade100, 
+      ), 
+      body: Column( 
+        children: <Widget>[ 
+          // buildCartSummary(cart, context), 
+          const SizedBox(height: 10), 
+          Expanded( 
+            child: buildCartDetails(cart), 
+          ) 
+        ], 
+      ), 
+    ); 
+  } 
+ 
+  Widget buildCartDetails(CartManager cart) { 
+    return ListView( 
+      children: cart.productEntries 
+          .map( 
+            (entry) => CartItemCard( 
+              productId: entry.key, 
+              cardItem: entry.value, 
+            ), 
+          ) 
+          .toList(), 
+    ); 
+  } 
+ 
+  // Widget buildCartSummary(CartManager cart, BuildContext context) { 
+  //   return Card( 
+  //     margin: const EdgeInsets.all(15), 
+  //     child: Padding( 
+  //       padding: const EdgeInsets.all(8), 
+  //       child: Row( 
+  //         mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+  //         children: <Widget>[ 
+  //           const Text( 
+  //             'Total', 
+  //             style: TextStyle(fontSize: 20), 
+  //           ), 
+  //           const Spacer(), 
+  //           Chip( 
+  //             label: Text( 
+  //               '\$${cart.totalAmount.toStringAsExponential(2)}', 
+  //               style: TextStyle( 
+  //                 color: Theme.of(context).primaryTextTheme.titleLarge?.color, 
+  //               ), 
+  //             ), 
+  //             backgroundColor: Theme.of(context).primaryColor, 
+  //           ), 
+  //           // TextButton( 
+  //           //   onPressed: cart.totalAmount <= 0 
+  //           //   ? null 
+  //           //   : () { 
+  //           //     context.read<OrdersManager>().addOrder( 
+  //           //       cart.products, 
+  //           //       cart.totalAmount, 
+  //           //     ); 
+  //           //     cart.clear(); 
+  //           //   }, 
+  //           //   style: TextButton.styleFrom( 
+  //           //     textStyle: 
+  //           //     TextStyle(color: Theme.of(context).primaryColor), 
+  //           //   ), 
+  //           //     child: const Text('ORDER NOW'), 
+  //           //   ), 
+  //         ], 
+  //       ), 
+  //     ), 
+  //   ); 
+  // } 
 }

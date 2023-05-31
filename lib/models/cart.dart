@@ -1,51 +1,31 @@
-class Cart {
-  final String? id;
-  final String title;
-  final double price;
-  final String imageUrl;
-  final double quantity;
+class CartItem { 
+  final String id; 
+  final String title; 
+  final int quantity; 
+  final double price; 
+  final String imageUrl; 
  
-  Cart({
-    this.id, 
-    required this.title,
-    required this.price,
-    required this.imageUrl,
-    required this.quantity,
-    isFavorite = false,
-  });
-
-  Cart copyWith({
-    String? id,
-    String? title,
-    String? description,
-    double? price,
-    String? imageUrl,
-    double? quantity,
-  }) {
-    return Cart(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      price: price ?? this.price,
-      imageUrl: imageUrl ?? this.imageUrl,
-      quantity: quantity ?? this.quantity,
-    );
-  }
+  CartItem({ 
+    required this.id, 
+    required this.title, 
+    required this.quantity, 
+    required this.price, 
+    required this.imageUrl, 
+  }); 
+ 
+  CartItem copyWith({ 
+    String? id, 
+    String? title, 
+    int? quantity, 
+    double? price, 
+    String? imageUrl, 
+  }) { 
+    return CartItem( 
+      id: id?? this.id, 
+      title: title ?? this.title, 
+      quantity: quantity ?? this.quantity, 
+      price: price ?? this.price, 
+      imageUrl: imageUrl ?? this.imageUrl, 
+    ); 
+  } 
 }
-
-List product = [
-  Cart(
-      title: "Hoa hồng nữ hoàng",
-      price: 30.01,
-      imageUrl: 'assets/images/hoaly.jpg',
-      quantity: 1),
-  Cart(
-      title: "Only rose 30",
-      price: 39.50,
-      imageUrl: 'assets/images/hoaly.jpg',
-      quantity: 1),
-       Cart(
-      title: "Only rose 30",
-      price: 39.50,
-      imageUrl: 'assets/images/hoaly.jpg',
-      quantity: 1),
-];
