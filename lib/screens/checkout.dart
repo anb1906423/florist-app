@@ -8,17 +8,16 @@ class CheckOutBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-     body: SingleChildScrollView(
-    
-       child: Column(
-          children: <Widget>[
-            CheckOut(),
-            CheckOutDetail()
-          
-          ],
-       ),
-     )
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('FlowerShop'),
+          backgroundColor: Colors.pink.shade100,
+        ),
+
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[CheckOut(), CheckOutDetail()],
+          ),
+        ));
   }
 }

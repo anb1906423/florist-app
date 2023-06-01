@@ -83,7 +83,6 @@ class CartScreen extends StatelessWidget {
         ),
       ),
     );
-    
   }
 
   Widget buildCartSummary(CartManager cart, BuildContext context) {
@@ -109,24 +108,6 @@ class CartScreen extends StatelessWidget {
               ),
               backgroundColor: Theme.of(context).primaryColor,
             ),
-            // TextButton(
-            //   // onPressed: cart.totalAmount <= 0
-            //   // ? null
-            //   // : () {
-            //   //   context.read<OrdersManager>().addOrder(
-            //   //     cart.products,
-            //   //     cart.totalAmount,
-            //   //   );
-            //   //   cart.clear();
-            //   // },
-            //   onPressed: () {
-            //     print("Them vao ddon hang");
-            //   },
-            //   style: TextButton.styleFrom(
-            //     textStyle: TextStyle(color: Theme.of(context).primaryColor),
-            //   ),
-            //   child: const Text('Thanh Toán')
-            // ),
           ],
         ),
       ),
