@@ -139,26 +139,17 @@ class _CheckOutState extends State<CheckOut> {
                               onPressed: () => showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text(
-                                    'Đặt hàng thành công!!',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                
                                   content: const Text(
-                                    'Tiếp tục mua hàng',
+                                    'Xác nhận đặt hàng',
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
                                   actions: <Widget>[
                                     TextButton(
-                                      onPressed: () => Navigator.of(context)
-                                          .push(MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomeScreen())),
+                                      onPressed: () => Navigator.pop(context),
                                       child: const Text(
-                                        'Thoát',
+                                        'Hủy',
                                         style: TextStyle(
                                             color: Colors.red, fontSize: 20),
                                       ),
@@ -167,7 +158,7 @@ class _CheckOutState extends State<CheckOut> {
                                       onPressed: () => Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) =>
-                                                  ProductsOverviewScreen())),
+                                                  HomeScreen())),
                                       child: const Text(
                                         'Đồng ý',
                                         style: TextStyle(fontSize: 18),

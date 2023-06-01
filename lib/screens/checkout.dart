@@ -25,18 +25,5 @@ class CheckOutBody extends StatelessWidget {
        ),
      )
     );
-
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('ĐẶT HÀNG'),
-          backgroundColor: Colors.pink.shade100,
-        ),
-        drawer: const AppDrawer(),
-        body: const SingleChildScrollView(
-          child: Column(
-            children: <Widget>[CheckOut(), CheckOutDetail()],
-          ),
-        ));
-
   }
 }
