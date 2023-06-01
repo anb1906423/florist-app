@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'all_product.dart';
 import 'favorite_product.dart';
@@ -11,7 +10,6 @@ class BodyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    var product;
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[

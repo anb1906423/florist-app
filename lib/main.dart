@@ -26,25 +26,25 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.pink.shade100,
         scaffoldBackgroundColor: Colors.pink.shade50,
       ),
-      home: CartScreen(),
       //home:   Orders(),
-      // home:  const ProductsOverviewScreen(),
-      // routes: {
-      //   HomeScreen.routeName: (ctx) => HomeScreen(),
-      // },
-      // onGenerateRoute: (settings) {
-      //   if (settings.name == ProductDetailScreen.routeName) {
-      //     final productId = settings.arguments as String;
-      //     return MaterialPageRoute(
-      //       builder: (ctx) {
-      //         return ProductDetailScreen(
-      //           ProductsManager().findById(productId)!,
-      //         );
-      //       },
-      //     );
-      //   }
-      //   return null;
-      // },
+      home:  const ProductsOverviewScreen(),
+      routes: {
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+        CartScreen.routeName: (ctx) => CartScreen(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == ProductDetailScreen.routeName) {
+          final productId = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (ctx) {
+              return ProductDetailScreen(
+                ProductsManager().findById(productId)!,
+              );
+            },
+          );
+        }
+        return null;
+      },
 
     );
   }

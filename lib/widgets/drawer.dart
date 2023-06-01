@@ -1,3 +1,4 @@
+import 'package:florist_app/screens/cart.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home.dart';
@@ -59,6 +60,13 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           const Divider(),
+          ListTile(
+            leading: const Icon(Icons.shopping_cart), iconColor: Colors.pink.shade100,
+            title: const Text('Giỏ Hàng'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(CartScreen.routeName);
+            },
+          ),
 
 
         ],

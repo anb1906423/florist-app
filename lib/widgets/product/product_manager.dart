@@ -1,6 +1,16 @@
+import 'package:flutter/material.dart';
+
 import '../../models/product.dart';
 
-class ProductsManager {
+class ProductsManager with ChangeNotifier {
+  Product? findById(String id) {
+    try {
+      return _items.firstWhere((item) => item.id == id);
+    } catch (error) {
+      return null;
+    }
+  }
+
   final List<Product> _items = [
     Product(
       id: 'p1',
@@ -39,14 +49,6 @@ class ProductsManager {
           'https://vyfarm.com/wp-content/uploads/2022/11/hoa-hong-phan.jpg',
     ),
   ];
-  Product? findById(String id) {
-    try {
-      return _items.firstWhere((item) => item.id == id);
-    } catch (error) {
-      return null;
-    }
-  }
-
   int get itemCount {
     return _items.length;
   }
@@ -57,6 +59,34 @@ class ProductsManager {
 
   List<Product> get favoriteItems {
     return _items.where((item) => item.isFavorite).toList();
+  }
+
+  void updateProduct(Product product) {
+    final index = _items.indexWhere((item) => item.id == product.id);
+    if (index >= 0) {
+      _items[index] = product;
+      notifyListeners();
+    }
+  }
+
+  void toggleFavoriteStatus(Product product) {
+    final savedStatus = product.isFavorite;
+    product.isFavorite = !savedStatus;
+  }
+
+  void deleteProduct(String id) {
+    final index = _items.indexWhere((item) => item.id == id);
+    _items.removeAt(index);
+    notifyListeners();
+  }
+
+  void addProduct(Product product) {
+    _items.add(
+      product.copyWith(
+        id: 'p${DateTime.now().toIso8601String()}',
+      ),
+    );
+    notifyListeners();
   }
 
 }

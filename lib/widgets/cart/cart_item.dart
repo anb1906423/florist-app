@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../models/cart.dart';
@@ -37,7 +36,7 @@ class CartItemCard extends StatelessWidget {
       confirmDismiss: (direction) {
         return showConfirmDialog(
           context,
-          'Do you want to remove the item from the cart?',
+          'Bạn có muốn xóa sản phẩm này khỏi giỏ hàng mình không?',
         );
       },
       onDismissed: (direction) {
@@ -79,11 +78,11 @@ class CartItemCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Image.asset(
-                    cardItem.imageUrl,
-                    // width: 0,
-                    // height: 0,
-                    fit: BoxFit.cover,
-                  ),
+                  cardItem.imageUrl,
+                  // width: 0,
+                  // height: 0,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -116,7 +115,8 @@ class CartItemCard extends StatelessWidget {
                           style:
                               TextStyle(color: Colors.pinkAccent, fontSize: 15),
                         ),
-                        const Spacer(),
+                        // const Spacer(),
+                        const SizedBox(width: 120),
                         Container(
                             padding: const EdgeInsets.all(3),
                             decoration: BoxDecoration(
@@ -154,12 +154,6 @@ class CartItemCard extends StatelessWidget {
                                     )),
                               ],
                             )),
-                        const SizedBox(
-                          width: 50,
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
                       ],
                     ),
                   ),
