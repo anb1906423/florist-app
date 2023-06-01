@@ -28,11 +28,11 @@ class CheckOutBody extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('FlowerShop'),
+          title: const Text('ĐẶT HÀNG'),
           backgroundColor: Colors.pink.shade100,
         ),
-
-        body: SingleChildScrollView(
+        drawer: const AppDrawer(),
+        body: const SingleChildScrollView(
           child: Column(
             children: <Widget>[CheckOut(), CheckOutDetail()],
           ),

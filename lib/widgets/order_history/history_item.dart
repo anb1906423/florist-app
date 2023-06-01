@@ -28,7 +28,7 @@ class _OrderItemCardState extends State<OrderItemCard>{
           child: Container(
             child: Text("DANH SÁCH ĐƠN HÀNG",
             style: const TextStyle(
-                    fontSize: 22,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
             ),
