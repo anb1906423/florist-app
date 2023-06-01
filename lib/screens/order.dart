@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import '../widgets/drawer.dart';
-import '../widgets/checkout/checkout_detail.dart';
-import '../widgets/checkout/checkout.dart';
-
 
 import '../widgets/drawer.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
 
-class CheckOutBody extends StatelessWidget {
-  const CheckOutBody({super.key});
+  @override
+  State<Orders> createState() => _OrderState();
+}
 
+class _OrderState extends State<Orders> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Đơn hàng'),
         backgroundColor: Colors.pink[100],
@@ -106,21 +104,7 @@ class CheckOutBody extends StatelessWidget {
             ],
           ),
         ),
-=======
-        title: const Text('ĐẶT HÀNG'),
-        backgroundColor: Colors.pink.shade100,
->>>>>>> 2b6fd0574cd5aa2413690df1cbf7981bc8bfcf9d
       ),
-     drawer:  const AppDrawer(),
-     body: const SingleChildScrollView(
-    
-       child: Column(
-          children: <Widget>[
-            CheckOut(),
-            CheckOutDetail()
-          ],
-       ),
-     )
     );
   }
 }
