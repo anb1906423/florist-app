@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../widgets/drawer.dart';
 import '../widgets/checkout/checkout_detail.dart';
 import '../widgets/checkout/checkout.dart';
 
@@ -10,11 +10,11 @@ class CheckOutBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('FlowerShop'),
+          title: const Text('ĐẶT HÀNG'),
           backgroundColor: Colors.pink.shade100,
         ),
-
-        body: SingleChildScrollView(
+        drawer: const AppDrawer(),
+        body: const SingleChildScrollView(
           child: Column(
             children: <Widget>[CheckOut(), CheckOutDetail()],
           ),
