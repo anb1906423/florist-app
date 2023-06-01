@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 class Orders extends StatefulWidget {
   const Orders({super.key});
 
@@ -12,9 +14,10 @@ class _OrderState extends State<Orders> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FlowerShop'),
+        title: const Text('Đơn hàng'),
         backgroundColor: Colors.pink[100],
       ),
+      drawer:  const AppDrawer(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
@@ -23,43 +26,10 @@ class _OrderState extends State<Orders> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Column(
-                children: <Widget>[
-                  Row(
-                    children: [
-                      Text(
-                        "Chờ lấy hàng",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: AutofillHints.addressCity),
-                      ),
-                      Spacer(),
-                      Text(
-                        "Đang giao",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: AutofillHints.addressCity),
-                      ),
-                      Spacer(),
-                      Text(
-                        "Đã giao",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: AutofillHints.addressCity),
-                      ),
-                      Spacer(),
-                      Text(
-                        "Đã hủy",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: AutofillHints.addressCity),
-                      ),
-                    ],
-                  ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("DANH SÁCH ĐƠN HÀNG", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, fontFamily: AutofillHints.addressCity),)
                 ],
               ),
               ListView.builder(

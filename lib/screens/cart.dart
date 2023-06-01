@@ -1,3 +1,5 @@
+import 'package:florist_app/screens/checkout.dart';
+import 'package:florist_app/widgets/checkout/checkout.dart';
 import 'package:flutter/material.dart';
 import '../widgets/cart/cart_item.dart';
 import '../widgets/cart/cart_manager.dart';
@@ -23,7 +25,7 @@ class CartScreen extends StatelessWidget {
           Expanded(
             child: buildCartDetails(cart),
           ),
-          buildPayment(),
+          buildPayment(context),
           SizedBox( height: 50,),
         ],
       ),
@@ -43,7 +45,7 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  Widget buildPayment() {
+  Widget buildPayment(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
         padding:
@@ -52,9 +54,8 @@ class CartScreen extends StatelessWidget {
         backgroundColor: Colors.pink.shade100,
         //minimumSize: Size(double.infinity, 50)
       ),
-      onPressed: () {
-        print("Them san pham thanh toán");
-      },
+      onPressed: () =>  Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => CheckOutBody())),
       // onPressed: () {
       //   final cart = context.read<CartManager>();
       //   cart.addItem(product);
@@ -82,6 +83,7 @@ class CartScreen extends StatelessWidget {
           color: Colors.white,
         ),
       ),
+      
     );
     
   }

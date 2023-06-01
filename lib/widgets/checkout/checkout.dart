@@ -1,10 +1,11 @@
+import 'package:florist_app/screens/home.dart';
 import 'package:flutter/material.dart';
 
 import "../../constants/colors.dart";
-
+import '../../screens/product.dart';
+import '../../screens/update_profile.dart';
 
 class CheckOut extends StatefulWidget {
-
   const CheckOut({super.key});
 
   @override
@@ -12,7 +13,6 @@ class CheckOut extends StatefulWidget {
 }
 
 class _CheckOutState extends State<CheckOut> {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -51,7 +51,7 @@ class _CheckOutState extends State<CheckOut> {
                               fontFamily: AutofillHints.addressCity),
                         ),
                         Spacer(),
-                        Icon(Icons.create),
+                        IconButtonProfile()
                       ],
                     ),
                     const Row(
@@ -118,7 +118,6 @@ class _CheckOutState extends State<CheckOut> {
                         ),
                       ],
                     ),
-                    
                     Padding(
                       padding: const EdgeInsets.only(top: 20, bottom: 10),
                       child: Row(
@@ -135,7 +134,50 @@ class _CheckOutState extends State<CheckOut> {
                               ),
                               backgroundColor: btncolor,
                               foregroundColor: Colors.white,
-                              onPressed: () {},
+
+                              ///
+                              onPressed: () => showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text(
+                                    'Đặt hàng thành công!!',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  content: const Text(
+                                    'Tiếp tục mua hàng',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 20),
+                                  ),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeScreen())),
+                                      child: const Text(
+                                        'Thoát',
+                                        style: TextStyle(
+                                            color: Colors.red, fontSize: 20),
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProductsOverviewScreen())),
+                                      child: const Text(
+                                        'Đồng ý',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              ///
                               label: const Text(
                                 'XÁC NHẬN',
                                 style: TextStyle(
@@ -147,19 +189,40 @@ class _CheckOutState extends State<CheckOut> {
                             ),
                           )
                         ],
-                       
                       ),
-                    
                     ),
-                    
                   ],
                 ),
-                
               ),
-             
             ],
           ),
-        ), 
+        ),
+      ],
+    );
+  }
+}
+
+class IconButtonProfile extends StatefulWidget {
+  const IconButtonProfile({super.key});
+
+  @override
+  State<IconButtonProfile> createState() => _IconButtonProfileState();
+}
+
+class _IconButtonProfileState extends State<IconButtonProfile> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        CircleAvatar(
+          backgroundColor: Colors.pink[50],
+          child: IconButton(
+            onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
+            icon: const Icon(Icons.create),
+          ),
+        ),
       ],
     );
   }
