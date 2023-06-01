@@ -25,5 +25,18 @@ class CheckOutBody extends StatelessWidget {
        ),
      )
     );
+
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('FlowerShop'),
+          backgroundColor: Colors.pink.shade100,
+        ),
+
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[CheckOut(), CheckOutDetail()],
+          ),
+        ));
+
   }
 }

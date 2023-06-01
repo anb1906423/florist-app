@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 
 
+import '../widgets/drawer.dart';
 import '../widgets/profile/avatar.dart';
 import 'update_profile.dart';
 
 class ProfileScreen extends StatelessWidget {
+  static const routeName = '/profile';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
         title: const Text('Trang cá nhân'),
         backgroundColor: Colors.pink[100],
       ),
+      drawer: const AppDrawer(),
       body: Container(
         padding: EdgeInsets.only(top: 24, bottom: 16),
         child: Center(

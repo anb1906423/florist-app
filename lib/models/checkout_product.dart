@@ -4,14 +4,13 @@ class CheckOutProduct {
   final double price;
   final String images;
   final double quantity;
- 
+
   CheckOutProduct({
-    this.id, 
+    this.id,
     required this.name,
     required this.price,
     required this.images,
     required this.quantity,
-  
   });
 
   CheckOutProduct copyWith({
@@ -34,18 +33,18 @@ class CheckOutProduct {
 
 List product = [
   CheckOutProduct(
-      name: "Hoa hồng nữ hoàng",
-      price: 30.01,
+      name: "Hoa Tulip",
+      price: 11.02,
+      images: 'assets/images/Tulip.jpg',
+      quantity: 1),
+  CheckOutProduct(
+      name: "Hoa Linh Lan",
+      price: 25.71,
+      images: 'assets/images/linhlan.jpg',
+      quantity: 1),
+  CheckOutProduct(
+      name: "Hoa Lan",
+      price: 15.20,
       images: 'assets/images/Lan.jpg',
-      quantity: 1),
-  CheckOutProduct(
-      name: "Only rose 30",
-      price: 39.50,
-      images: 'assets/images/hoaly.jpg',
-      quantity: 1),
-  CheckOutProduct(
-      name: "Only rose 30",
-      price: 39.50,
-      images: 'assets/images/hoaly.jpg',
       quantity: 1),
 ];

@@ -20,6 +20,7 @@ class ProductsManager with ChangeNotifier {
       price: 11.02,
       imageUrl:
           'https://rosalind.vn/wp-content/uploads/2022/09/combo-10-bong-hoa-tulip-cao-su-gia-dep-tinh-te-1024x1024.jpg',
+      isFavorite: true,
     ),
     Product(
       id: 'p2',

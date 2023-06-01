@@ -30,8 +30,6 @@ class CheckOutItem extends StatelessWidget {
             flower.images,
             width: 70,
             height: 70,
-           
-            
           ),
           Expanded(
             child: Padding(
@@ -59,7 +57,6 @@ class CheckOutItem extends StatelessWidget {
                       const SizedBox(width: 15),
                     ],
                   ),
-              
                   Row(
                     children: [
                       Text(
@@ -78,6 +75,5 @@ class CheckOutItem extends StatelessWidget {
         ],
       ),
     );
-    
   }
 }
