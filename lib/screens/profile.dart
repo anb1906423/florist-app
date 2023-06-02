@@ -1,4 +1,5 @@
 import 'package:florist_app/screens/home.dart';
+import 'package:florist_app/widgets/black_line.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/login/body_welcome.dart';
@@ -76,11 +77,7 @@ class ProfileScreen extends StatelessWidget {
                           )
                         ]),
                   ),
-                  Container(
-                    padding: EdgeInsets.only(top: 8),
-                    height: 1.0,
-                    color: Colors.black38,
-                  ),
+                  blackLineWidget(),
                   Column(
                     children: [
                       infoItemMothod("Họ và tên: ", "Lê Văn Bưởi"),

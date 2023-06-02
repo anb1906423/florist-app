@@ -1,8 +1,10 @@
+import 'package:florist_app/screens/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/cart.dart';
 import 'screens/home.dart';
 import 'screens/order.dart';
+import 'screens/order_detail.dart';
 import 'screens/product.dart';
 import 'screens/product_detail.dart';
 import 'screens/signup.dart';
@@ -26,24 +28,24 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.pink.shade100,
         scaffoldBackgroundColor: Colors.pink.shade50,
       ),
-      home:   Orders(),
-      // home:  const ProductsOverviewScreen(),
-      // routes: {
-      //   HomeScreen.routeName: (ctx) => HomeScreen(),
-      // },
-      // onGenerateRoute: (settings) {
-      //   if (settings.name == ProductDetailScreen.routeName) {
-      //     final productId = settings.arguments as String;
-      //     return MaterialPageRoute(
-      //       builder: (ctx) {
-      //         return ProductDetailScreen(
-      //           ProductsManager().findById(productId)!,
-      //         );
-      //       },
-      //     );
-      //   }
-      //   return null;
-      // },
+      // home:   CartScreen(),
+      home:  OrderDetailScreen(orderId: '6470a2d977a4de6a69d88597'),
+      routes: {
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == ProductDetailScreen.routeName) {
+          final productId = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (ctx) {
+              return ProductDetailScreen(
+                ProductsManager().findById(productId)!,
+              );
+            },
+          );
+        }
+        return null;
+      },
 
     );
   }

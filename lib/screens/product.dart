@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../widgets/drawer.dart';
 import '../widgets/product/product_grid.dart';
+import 'cart.dart';
 
 enum FilterOptions { favorite, all }
 
 class ProductsOverviewScreen extends StatefulWidget {
-  const ProductsOverviewScreen ({ super.key});
+  const ProductsOverviewScreen({super.key});
   @override
   State<ProductsOverviewScreen> createState() => _ProductsOverviewScreenState();
 }
@@ -36,6 +37,10 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       ),
       onPressed: () {
         print('Go to cart screen');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CartScreen()),
+        );
       },
     );
   }
@@ -51,7 +56,6 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           }
         });
       },
-
       icon: const Icon(
         Icons.more_vert,
       ),
@@ -63,5 +67,4 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       ],
     );
   }
-
 }

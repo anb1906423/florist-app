@@ -76,7 +76,7 @@ class CartItemCard extends StatelessWidget {
           //     fit: BoxFit.cover, 
           //   ), 
           // ), 
-          Expanded( 
+          Expanded(
             child: Padding( 
               padding: const EdgeInsets.only(left: 10, bottom: 30), 
               child: Column( 

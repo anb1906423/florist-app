@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/home.dart';
+import '../screens/product.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -33,34 +34,39 @@ class AppDrawer extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text('FlowerShop',
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                  ),
+                  Text(
+                    'FlowerShop',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),iconColor: Colors.pink.shade100,
+            leading: const Icon(Icons.home),
+            iconColor: Colors.pink.shade100,
             title: const Text('Trang chủ'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
             },
           ),
           const Divider(),
-            ListTile(
-            leading: const Icon(Icons.shop), iconColor: Colors.pink.shade100,
+          ListTile(
+            leading: const Icon(Icons.shop),
+            iconColor: Colors.pink.shade100,
             title: const Text('Sản phẩm của flowerShop'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed('/');
+              // Navigator.of(context).pushReplacementNamed("/");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductsOverviewScreen()),
+              );
             },
           ),
           const Divider(),
-
-
         ],
       ),
     );
