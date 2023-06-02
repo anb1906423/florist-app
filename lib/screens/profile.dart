@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 import '../widgets/drawer.dart';
 import '../widgets/profile/avatar.dart';
@@ -28,14 +26,15 @@ class ProfileScreen extends StatelessWidget {
                   child: const Text(
                     "FullName",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 21,
                     ),
                   ),
                 ),
               ),
               Container(
-                width: 318,
-                padding: EdgeInsets.all(16.0),
+                width: 350,
+                height: 250,
+                padding: EdgeInsets.all(13.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.0),
@@ -49,7 +48,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             "Thông tin cá nhân",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontWeight: FontWeight.bold, fontSize: 21),
                           ),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
@@ -70,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
                                   style: TextStyle(
                                     color: Colors.blue,
                                     decoration: TextDecoration.none,
-                                    fontSize: 15,
+                                    fontSize: 21,
                                   ),
                                 ),
                               ),
@@ -101,18 +100,18 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Row infoItemMothod(field, value) {
-    return Row(children: [
+    return Row(
+      children: [
       Padding(
-          padding: EdgeInsets.only(top: 6, bottom: 6),
+          padding: EdgeInsets.only(top: 10, bottom: 10),
           child: Text(
             field,
-            style: TextStyle(fontSize: 13),
+            style: TextStyle(fontSize: 18),
           )),
       Text(
         value,
-        style: TextStyle(fontSize: 13),
+        style: TextStyle(fontSize: 18),
       ),
     ]);
   }
 }
-
