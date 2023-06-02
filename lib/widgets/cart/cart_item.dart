@@ -121,7 +121,10 @@ class CartItemCard extends StatelessWidget {
                             padding: const EdgeInsets.all(3),
                             decoration: BoxDecoration(
                                 // color: buttonColor,
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(20),
+                                 color: Colors.pink[50],
+                                ),
+                                 
                             child: Row(
                               children: [
                                 InkWell(
