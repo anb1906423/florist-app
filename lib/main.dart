@@ -12,10 +12,14 @@ import 'screens/product.dart';
 import 'screens/product_detail.dart';
 import 'screens/signup.dart';
 import 'screens/welcome.dart';
+import 'widgets/bottom_bar.dart';
 import 'widgets/product/product_manager.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(MaterialApp(
+    home: BottomBar(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
