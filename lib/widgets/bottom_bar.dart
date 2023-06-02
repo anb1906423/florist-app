@@ -46,7 +46,7 @@ class _BottomBarState extends State<BottomBar> {
               icon: Icon(Icons.home),
               color: selectedIndex == 0
                   ? Colors.pinkAccent
-                  : Colors.black.withOpacity(0.5),
+                  : Colors.white,
               onPressed: () {
                 setState(() {
                   selectedIndex = 0;
@@ -57,7 +57,7 @@ class _BottomBarState extends State<BottomBar> {
               icon: Icon(Icons.local_florist_rounded),
               color: selectedIndex == 1
                   ? Colors.pinkAccent
-                  : Colors.black.withOpacity(0.5),
+                  : Colors.white,
               onPressed: () {
                 setState(() {
                   selectedIndex = 1;
@@ -68,7 +68,7 @@ class _BottomBarState extends State<BottomBar> {
               icon: Icon(Icons.shopping_cart),
               color: selectedIndex == 2
                   ? Colors.pinkAccent
-                  : Colors.black.withOpacity(0.5),
+                  : Colors.white,
               onPressed: () {
                 setState(() {
                   selectedIndex = 2;
@@ -79,7 +79,7 @@ class _BottomBarState extends State<BottomBar> {
               icon: Icon(Icons.person),
               color: selectedIndex == 3
                   ? Colors.pinkAccent
-                  : Colors.black.withOpacity(0.5),
+                  : Colors.white,
               onPressed: () {
                 setState(() {
                   selectedIndex = 3;

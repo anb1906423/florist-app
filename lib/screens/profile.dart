@@ -2,6 +2,7 @@ import 'package:florist_app/screens/home.dart';
 import 'package:florist_app/widgets/black_line.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import '../widgets/drawer.dart';
 import '../widgets/profile/avatar.dart';
 import 'update_profile.dart';
@@ -18,6 +19,7 @@ class ProfileScreen extends StatelessWidget {
       drawer: const AppDrawer(),
       body: Container(
         padding: EdgeInsets.only(top: 24, bottom: 16),
+        color: buttonColor,
         child: Center(
           child: Column(
             children: [
@@ -26,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(top: 16, bottom: 28),
                   child: const Text(
-                    "FullName",
+                    "Lê Văn Sơn",
                     style: TextStyle(
                       fontSize: 21,
                     ),
