@@ -82,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
                   blackLineWidget(),
                   Column(
                     children: [
-                      infoItemMothod("Họ và tên: ", "Lê Văn Bưởi"),
+                      infoItemMothod("Họ và tên: ", "Lê Văn Sơn"),
                       infoItemMothod("Số điện thoại: ", "0819222273"),
                       infoItemMothod("Email: ", "email@gmail.com"),
                       infoItemMothod("Địa chỉ: ", "Cái Răng, Cần Thơ"),

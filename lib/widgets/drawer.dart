@@ -60,7 +60,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.shop),
             iconColor: Colors.pink.shade100,
-            title: const Text('Sản phẩm của flowerShop'),
+            title: const Text('Sản phẩm'),
             onTap: () {
               // Navigator.of(context).pushReplacementNamed("/");
               Navigator.push(
