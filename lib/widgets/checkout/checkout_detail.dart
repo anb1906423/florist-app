@@ -25,10 +25,8 @@ class CheckOutDetail extends StatelessWidget {
                   );
                 },
               ),
-             
             ],
           ),
-          
     );
   }
 }

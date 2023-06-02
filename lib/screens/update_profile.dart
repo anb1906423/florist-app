@@ -1,10 +1,8 @@
-import 'dart:io';
+
 import 'package:florist_app/widgets/profile/input_util.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../widgets/profile/avatar.dart';
-import '../widgets/profile/input_util.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   @override

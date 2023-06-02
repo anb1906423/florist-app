@@ -1,7 +1,10 @@
+
+import 'package:florist_app/screens/order_history.dart';
 import 'package:florist_app/screens/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/cart.dart';
+import 'screens/checkout.dart';
 import 'screens/home.dart';
 import 'screens/order.dart';
 import 'screens/order_detail.dart';
@@ -29,9 +32,13 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.pink.shade50,
       ),
       // home:   CartScreen(),
-      home:  OrderDetailScreen(orderId: '6470a2d977a4de6a69d88597'),
+      // home:  OrderDetailScreen(orderId: '6470a2d977a4de6a69d88597'),
+      home: const ProductsOverviewScreen(),
       routes: {
         HomeScreen.routeName: (ctx) => HomeScreen(),
+        CartScreen.routeName: (ctx) => CartScreen(),
+        OrdersScreen.routeName: (ctx) => OrdersScreen(),
+        ProfileScreen.routeName: (ctx) => ProfileScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == ProductDetailScreen.routeName) {
@@ -46,7 +53,6 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },
-
     );
   }
 }
